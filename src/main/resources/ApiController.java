@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller 
-@RequestMapping(path="/toDo")
+@RequestMapping(path="/")
 
 public class ApiController {
     @Autowired private ToDoRepo todoRepo;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
  
 @Controller
-@RequestMapping("/")
+@RequestMapping("/index")
 public class TodoController {
   @Autowired
   ToDoService service;
@@ -54,4 +54,5 @@ public class TodoController {
     service.createOrUpdateToDo(todo);
     return "redirect:/";
   }
+  
 }
