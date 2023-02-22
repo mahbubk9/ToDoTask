@@ -7,18 +7,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
-import com.howtodoinjava.demo.entity.EmployeeEntity;
-import com.howtodoinjava.demo.exception.RecordNotFoundException;
-import com.howtodoinjava.demo.repository.EmployeeRepository;
- 
+
 @Service
 public class ToDoService {
    
   @Autowired
   ToDoRepo todoRepo;
    
-  public List<ToDo> getAllToDos()
-  {
+  public List<ToDo> getAllToDos() {
     List<ToDo> result = (List<ToDo>) todoRepo.findAll();
      
     if(result.size() > 0) {
@@ -28,14 +24,14 @@ public class ToDoService {
     }
   }
    
-  public ToDo getToDoId(Long id) throws RecordNotFoundException 
+  public ToDo getToDoById(Integer id) throws RecordNotFoundException 
   {
     Optional<ToDo> todo = todoRepo.findById(id);
      
     if(todo.isPresent()) {
       return todo.get();
     } else {
-      throw new RecordNotFoundException("No employee record exist for given id");
+      throw new RecordNotFoundException("No ToDo record exist for given id");
     }
   }
    
@@ -71,15 +67,15 @@ public class ToDoService {
     }
   } 
    
-  public void deleteEmployeeById(Long id) throws RecordNotFoundException 
+  public void deleteToDoById(Integer id) throws RecordNotFoundException 
   {
     Optional<ToDo> todo = todoRepo.findById(id);
      
     if(todo.isPresent()) 
     {
-      todo.deleteById(id);
+      todoRepo.deleteById(id);
     } else {
-      throw new RecordNotFoundException("No employee record exist for given id");
+      throw new RecordNotFoundException("No ToDo record exist for given id");
     }
   } 
 }
