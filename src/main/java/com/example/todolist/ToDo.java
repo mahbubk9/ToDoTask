@@ -1,6 +1,7 @@
 package com.example.todolist;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import java.util.Date;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class ToDo {
 
     private String priority;
 
-    private DateTimeFormat deadLine;
+    private Date deadLine;
 
     private String status;
 
@@ -67,14 +68,14 @@ public class ToDo {
     /**
      * @return DateTimeFormat return the deadLine
      */
-    public DateTimeFormat getDeadLine() {
+    public Date getDeadLine() {
         return deadLine;
     }
 
     /**
      * @param deadLine the deadLine to set
      */
-    public void setDeadLine(DateTimeFormat deadLine) {
+    public void setDeadLine(Date deadLine) {
         this.deadLine = deadLine;
     }
 
