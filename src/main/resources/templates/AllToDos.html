@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All Tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+    <div class="container my-2">
+        <div class="d-flex justify-content-center" >
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href=index.html>To Do List</a>
+              </nav>
+              
+        </div>
+<div class="card justify-content-center">
+    <div class="card-body justify-content-center">
+
+    </div>        
+    <div class="positionlist justify-content-center" th:unless="${#lists.isEmpty(ToDos)}">
+    
+        <h2>All Tasks Table</h2>
+    
+        <table>
+            <thead>
+            <tr>
+                <th>Task Description</th>
+                <th>Priority</th>
+                <th>DeadLine</th>
+                <th>Status</th>
+                
+               
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ac : ${ToDos}">
+                <td th:text="${ac.taskDescription}"></td>
+                <td th:text="${ac.priority}"></td>
+                <td th:text="${ac.deadLine}"></td>
+                <td th:text="${ac.status}"></td>
+                
+                
+                
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+</html>

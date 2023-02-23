@@ -26,13 +26,13 @@ public class TodoController {
     //this.service.saveAll(List.of(new ToDo(04,"Meeting with Boss","High","2023-03-22","Not Done")))
   }
  
-  @GetMapping(path="/ToDoTbl")
+  @GetMapping(path="/AllToDos")
   public String getAllToDos(Model model) 
   {
     List<ToDo> list = service.getAllToDos();
  
     model.addAttribute("ToDos", list);
-    return "ToDoTbl";
+    return "AllToDos";
   }
  
   @RequestMapping(path = {"/edit", "/edit/{id}"})

@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Retrieve Aircraft Position Report</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All Employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 </head>
+
 <body>
-    <p><a href="/ToDoTbl">Click here</a>
-        to retrieve current aircraft positions in range of receiver.</p>
+    <div class="container my-2">
+    <div class="d-flex justify-content-center" >
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand" href="#">To Do List</span>
+          </nav>
+          
+    </div>
+    <div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-center">
+            <p class="my-5 ">
+                <a href="/AllToDos" class="btn btn-dark ">
+                <i class="fas fa-user-plus ml-2"> View All Tasks </i></a>
+            </p>
+
+            <p class="my-5 ">
+                <a href=AddToDo.html class="btn btn-dark">
+                <i class="fas fa-user-plus ml-2"> Add New Task </i></a>
+            </p>
+
+            <p class="my-5 ">
+                <a href="/AllToDos" class="btn btn-dark">
+                <i class="fas fa-user-plus ml-2"> Delete Task </i></a>
+            </p>
+
+
+        </div>
+       
+    </div>
+    </div>
+    </div>
 </body>
+
 </html>
