@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,18 +14,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
  
 @Controller
-@RequestMapping("/index")
+@RequestMapping(path="/index")
 public class TodoController {
   @Autowired
   ToDoService service;
+
+  public TodoController(ToDoService service) {
+    this.service = service;
+  }
  
-  @RequestMapping
+  @GetMapping
   public String getAllToDos(Model model) 
   {
     List<ToDo> list = service.getAllToDos();
  
     model.addAttribute("ToDos", list);
-    return "list-Todos";
+    return "index";
   }
  
   @RequestMapping(path = {"/edit", "/edit/{id}"})

@@ -1,6 +1,7 @@
 package com.example.todolist;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 
 import jakarta.persistence.Entity;
@@ -17,7 +18,7 @@ public class ToDo {
 
     private String priority;
 
-    private Date deadLine;
+    private LocalDate deadLine;
 
     private String status;
 
@@ -68,14 +69,14 @@ public class ToDo {
     /**
      * @return DateTimeFormat return the deadLine
      */
-    public Date getDeadLine() {
+    public LocalDate getDeadLine() {
         return deadLine;
     }
 
     /**
      * @param deadLine the deadLine to set
      */
-    public void setDeadLine(Date deadLine) {
+    public void setDeadLine(LocalDate deadLine) {
         this.deadLine = deadLine;
     }
 
