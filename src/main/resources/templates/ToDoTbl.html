@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All Employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+    <div class="container my-2">
+    <div class="d-flex justify-content-center" >
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand" href="#">To Do List</span>
+          </nav>
+          
+    </div>
+    <div class="card">
+    <div class="card-body">
+        <div th:switch="${ToDos}" class="container my-5">
+            <p class="my-5 ">
+                <a href="AddToDo.html" class="btn btn-dark">
+                <i class="fas fa-user-plus ml-2"> Add Task </i></a>
+            </p>
+            <div class="col-md-10">
+                <h2 th:case="null">No record found !!</h2>
+                <div th:case="*">
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>Task Description</th>
+                                <th>Priority</th>
+                                <th>DeadLine</th>
+                                <th>Status</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="T : ${ToDos}">
+                                <td th:text="${T.taskDescription}"></td>
+                                <td th:text="${T.priority}"></td>
+                                <td th:text="${T.deadLine}"></td>
+                                <td th:text="${T.status}"></td>
+                                <td>
+                                    <a th:href="@{/edit/{id}(id=${employee.id})}" class="btn btn-light">
+                                        <i class="fas fa-user-edit ml-2"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/delete/{id}(id=${employee.id})}" class="btn btn-light">
+                                        <i class="fas fa-user-times ml-2"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
